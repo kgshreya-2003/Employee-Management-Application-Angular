@@ -1,0 +1,331 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0; padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fef9f4; /* Creamy warm background */
+  color: #5a4d3a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 2rem 3rem;
+  background: #fff9f0;
+  border-radius: 14px;
+  box-shadow:
+    0 8px 16px rgba(181, 122, 42, 0.25),
+    inset 0 0 15px #f7ecd6bb;
+}
+
+/* Header */
+header h1 {
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #a97c50;
+  letter-spacing: 1.3px;
+  text-shadow: 0 0 8px #d8b38faa;
+  margin-bottom: 2rem;
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 30px;
+  border: none;
+  padding: 0.6rem 1.8rem;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn-primary {
+  background-color: #b57a2a;
+  color: #fff9f0;
+  box-shadow: 0 5px 15px #b57a2aaa;
+}
+
+.btn-primary:hover {
+  background-color: #d7b766;
+  box-shadow: 0 8px 20px #d7b766cc;
+}
+
+.btn-secondary {
+  background-color: #a18354;
+  color: #fff9f0;
+  box-shadow: 0 5px 15px #a1835480;
+}
+
+.btn-secondary:hover {
+  background-color: #c7aa58;
+  box-shadow: 0 7px 18px #c7aa5880;
+}
+
+.btn-close {
+  background: transparent;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #a97c50;
+  padding: 0 0.5rem;
+  line-height: 1;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: color 0.2s ease;
+}
+
+.btn-close:hover {
+  color: #d7b766;
+  border-color: #d7b766;
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Add Employee Button Section */
+.list-header {
+  margin-bottom: 2rem;
+}
+
+/* Employee List */
+.list-section {
+  border-radius: 12px;
+  background: #fff7e9;
+  padding: 1.8rem 2.5rem;
+  box-shadow: inset 0 0 15px #f7ecd6cc;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  color: #b57a2a;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 5px #d7b766aa;
+}
+
+/* Employee Cards */
+.employee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.7rem;
+}
+
+.employee-card {
+  background: #f9f5ee;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 6px 16px rgba(165, 130, 72, 0.2);
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.employee-card:hover, .employee-card:focus-within {
+  background-color: #f1e8d8;
+  box-shadow: 0 8px 20px #b57a2aaa;
+  outline: none;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.1rem;
+}
+
+.employee-name {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #a97c50;
+  text-shadow: 0 0 6px #d7b766bb;
+}
+
+.employee-id {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #a18354;
+}
+
+.card-body p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #6e5d3b;
+}
+
+.card-body a {
+  color: #b57a2a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.card-body a:hover {
+  color: #d7b766;
+  text-decoration: underline;
+}
+
+/* Card Footer Buttons */
+.card-footer {
+  margin-top: 1.3rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-edit {
+  background-color: #8b6f35;
+  color: #fff9f0;
+  padding: 0.6rem 1.7rem;
+  box-shadow: 0 4px 14px #8b6f3580;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #b59f57;
+  box-shadow: 0 6px 18px #b59f5780;
+}
+
+.btn-delete {
+  background-color: #c75b43;
+  color: #fff9f0;
+  padding: 0.6rem 1.7rem;
+  box-shadow: 0 4px 14px #c75b4380;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #e3866a;
+  box-shadow: 0 6px 18px #e3866aaa;
+}
+
+/* Scrollbar styling */
+.employee-list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.employee-list::-webkit-scrollbar-track {
+  background: #fef9f4;
+  border-radius: 10px;
+}
+
+.employee-list::-webkit-scrollbar-thumb {
+  background: #b57a2aaa;
+  border-radius: 10px;
+}
+
+.employee-list::-webkit-scrollbar-thumb:hover {
+  background: #d7b766;
+}
+
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.25);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Dialog */
+.modal-dialog {
+  background: #fff9f0;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem 2.5rem 2.5rem;
+  box-shadow:
+    0 12px 28px rgba(181,122,42,0.45),
+    inset 0 0 20px #f7ecd6cc;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeInModal 0.3s ease forwards;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Header */
+.modal-dialog > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.modal-dialog h2 {
+  font-size: 1.9rem;
+  color: #a97c50;
+  font-weight: 700;
+  text-shadow: 0 0 7px #d8b38faa;
+}
+
+/* Form */
+.employee-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #b57a2a;
+  margin-bottom: 0.4rem;
+  display: block;
+  font-size: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  border: 2px solid #d7c9a7;
+  font-size: 1rem;
+  color: #5a4d3a;
+  transition: border-color 0.25s ease;
+  background-color: #fff9f0;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #b57a2a;
+  box-shadow: 0 0 5px #d7b766aa;
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: 1.3rem;
+  margin-top: 1rem;
+  justify-content: flex-end;
+}
+
+.form-actions button {
+  min-width: 110px;
+}
+
+

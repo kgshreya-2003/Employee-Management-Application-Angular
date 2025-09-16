@@ -1,0 +1,105 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  background: linear-gradient(90deg, #f9f4e9, #fdf8f2);
+  box-shadow: 0 4px 10px rgba(181, 122, 42, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+/* Logo styling */
+.logo .brand-link {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a97c50;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-shadow: 0 0 5px rgba(169, 124, 80, 0.7);
+  transition: color 0.3s ease;
+}
+
+.logo .brand-link:hover,
+.logo .brand-link.active {
+  color: #b57a2a;
+  text-shadow: 0 0 10px #b57a2a;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  gap: 1.2rem;
+}
+
+/* Base button styles */
+.btn {
+  padding: 0.55rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff9f0;
+  box-shadow: 0 5px 15px rgba(181, 122, 42, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* Register button */
+.register-btn {
+  background: #f7e9c7; /* light cream */
+  color: #a97c50;
+  border-color: #d7b766;
+  box-shadow: 0 5px 15px #d7b76655;
+}
+
+.register-btn:hover,
+.register-btn.active {
+  background: #f0e3af;
+  color: #b57a2a;
+  box-shadow: 0 6px 20px #d7b766cc;
+  transform: translateY(-2px);
+}
+
+/* Admin button */
+.admin-btn {
+  background: #b57a2a; /* warm gold */
+  color: #fff9f0;
+  border-color: #a97c50;
+  box-shadow: 0 5px 15px #b57a2aaa;
+}
+
+.admin-btn:hover,
+.admin-btn.active {
+  background: #d7b766;
+  box-shadow: 0 6px 20px #d7b766cc;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    flex-grow: 1;
+    text-align: center;
+  }
+}

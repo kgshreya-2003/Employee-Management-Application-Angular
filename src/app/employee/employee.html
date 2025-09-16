@@ -1,0 +1,126 @@
+<div class="container employee-manager">
+
+  <main class="main-content">
+
+    <!-- Add Employee Button -->
+    <section class="list-header">
+      <button class="btn btn-primary" (click)="openForm()">Add Employee</button>
+    </section>
+
+    <!-- Employee List Section -->
+    <section class="list-section" aria-labelledby="list-title">
+      <h2 id="list-title" class="section-title">Employee List</h2>
+      <div class="employee-list">
+        <article
+          class="employee-card"
+          *ngFor="let emp of employees"
+          tabindex="0"
+          role="region"
+          aria-label="Employee {{ emp.name }}"
+        >
+          <div class="card-content">
+            <header class="card-header">
+              <h3 class="employee-name">{{ emp.name }}</h3>
+              <p class="employee-id">ID: {{ emp.id }}</p>
+            </header>
+            <div class="card-body">
+              <p><strong>Department:</strong> {{ emp.department }}</p>
+              <p>
+                <strong>Email:</strong>
+                <a href="mailto:{{ emp.email }}">{{ emp.email }}</a>
+              </p>
+              <p><strong>Salary:</strong> ${{ emp.salary | number:'1.0-0' }}</p>
+            </div>
+            <footer class="card-footer">
+              <button
+                class="btn btn-edit"
+                (click)="editEmployee(emp)"
+                aria-label="Edit employee {{ emp.name }}"
+              >
+                Edit
+              </button>
+              <button
+                class="btn btn-delete"
+                (click)="deleteEmployee(emp.id)"
+                aria-label="Delete employee {{ emp.name }}"
+              >
+                Delete
+              </button>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Modal Dialog for Add/Edit Form -->
+    <div class="modal-backdrop" *ngIf="isDialogOpen">
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="form-title">
+        <header>
+          <h2 id="form-title">{{ editMode ? 'Edit Employee' : 'Add New Employee' }}</h2>
+          <button class="btn-close" aria-label="Close dialog" (click)="closeDialog()">×</button>
+        </header>
+        <form (ngSubmit)="addEmployee()" class="employee-form" novalidate>
+          <div class="form-group">
+            <label for="employee-name">Name</label>
+            <input
+              id="employee-name"
+              type="text"
+              [(ngModel)]="newEmployee.name"
+              name="name"
+              placeholder="Enter full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="employee-department">Department</label>
+            <input
+              id="employee-department"
+              type="text"
+              [(ngModel)]="newEmployee.department"
+              name="department"
+              placeholder="Enter department"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="employee-email">Email</label>
+            <input
+              id="employee-email"
+              type="email"
+              [(ngModel)]="newEmployee.email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="employee-salary">Salary</label>
+            <input
+              id="employee-salary"
+              type="number"
+              [(ngModel)]="newEmployee.salary"
+              name="salary"
+              placeholder="Enter salary"
+              required
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              {{ editMode ? 'Update' : 'Add' }} Employee
+            </button>
+            <button
+              *ngIf="editMode"
+              type="button"
+              class="btn btn-secondary"
+              (click)="resetForm(); closeDialog()"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </main>
+</div>
