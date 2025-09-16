@@ -1,4 +1,4 @@
-# Employee-Management
+# Employee-Management Application
 A modern Angular application for managing employee records with full CRUD (Create, Read, Update, Delete) functionality.
 
 ## Features
@@ -19,7 +19,7 @@ A modern Angular application for managing employee records with full CRUD (Creat
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/kgshreya-2003/Employee-Management-angular
+   git clone https://github.com/kgshreya-2003/Employee-Management-application
    ```
    ```
    cd employee-management-angular
