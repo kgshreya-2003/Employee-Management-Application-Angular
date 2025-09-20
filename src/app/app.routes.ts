@@ -4,8 +4,8 @@ import { Employee, Employees } from './employee/employee';
 
 
 export const routes: Routes = [
-  { path: '', component: Employees },            // Home route shows collapsible list
-  { path: '**', redirectTo: '' }                       // Fallback redirect to home
+  { path: '', component: Employees },            
+  { path: '**', redirectTo: '' }                       
 ];
 
 @NgModule({
@@ -13,3 +13,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
