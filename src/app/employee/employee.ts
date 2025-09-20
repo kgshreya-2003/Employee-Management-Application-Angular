@@ -19,8 +19,7 @@ export interface Employee {
 })
 export class Employees {
   employees: Employee[] = [
-    { id: 1, name: 'Alice Johnson', department: 'HR', email: 'alice@example.com', salary: 50000 },
-    { id: 2, name: 'Bob Smith', department: 'IT', email: 'bob@example.com', salary: 60000 }
+  
   ];
 
   newEmployee: Employee = { id: 0, name: '', department: '', email: '', salary: 0 };
@@ -84,3 +83,4 @@ export class Employees {
     this.editMode = false;
   }
 }
+
